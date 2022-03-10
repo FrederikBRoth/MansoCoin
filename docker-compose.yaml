@@ -1,0 +1,33 @@
+version: '3'
+services:
+  mansocoindb:
+    build: ./MansoCoinDB
+    container_name: mansocoindb
+    networks:
+      - backend
+    restart: on-failure
+    ports:
+     - "27017:27017"
+
+  mansocoinapi:
+    build: ./MansoCoinAPI
+    container_name: mansocoinapi
+    networks:
+      - backend
+    restart: on-failure
+    depends_on:
+      - mansocoindb
+    ports:
+      - "3000:3000"
+  mansocoinfrontend:
+    build: ./MansoCoinFrontend
+    container_name: mansocoinfrontend
+    networks:
+      - backend
+    restart: on-failure
+    depends_on:
+      - mansocoinapi
+    ports:
+      - "80:80"
+networks:
+  backend:
