@@ -1,6 +1,11 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import '../stylesheets/Global.css';
+
+import Menu from "../components/Menu"
 function Homepage() {
+
+   
+
     return (
         <main>
             <div className="home">
@@ -24,6 +29,7 @@ function Homepage() {
                 <div className="bottom">
 
                 </div>
+                <Menu/>
             </div>
         </main>
 

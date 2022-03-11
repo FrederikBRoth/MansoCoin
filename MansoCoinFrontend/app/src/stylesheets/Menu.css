@@ -1,0 +1,7 @@
+.menu-parent {
+    position: fixed;
+    background-color: rgba(55, 56, 76, 1);
+    width: 100vw;
+    height: 10%;
+    transition: top
+}
